@@ -1,0 +1,44 @@
+.page{
+    height: 100vh;
+    width: 850px;
+    border-right: 1px solid rgb(227, 225, 225);
+    padding-left: 260px;
+     overflow-y: scroll;
+}
+.page_title{
+font-size: 20px;
+color: rgb(12, 12, 14);
+font-weight: bolder;
+padding-top: 20px;
+ float: left;
+ padding-left: 20px;
+ border-left: 1px solid rgb(227, 225, 225);
+ position: fixed;
+}
+.page::-webkit-scrollbar{
+    display: none;
+}
+.subsheader{
+    margin-left: 15px;
+}
+ .box{
+     margin-left: 20px;
+     margin-top: 20px;
+     border-top: 6px solid darkgray;
+     margin-bottom: 20px;
+ }
+ .subscribebutton{
+    margin-left: 33%;
+    margin-top: 25px;
+    background-color: red;
+    color: white;
+    width: 150px;
+    border-radius: 10px;
+ }
+ .alreadytweet{
+    padding-top: 50px;
+    padding-left: 10px;
+ }
+ .closebutton1{
+    margin-top: 20px !important;
+ }
