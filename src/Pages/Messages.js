@@ -3,7 +3,7 @@ import"./Page.css";
 const Messages=()=>{
     return(
      <div className="page">
-        <h4 className="page_title"> welcome to Messages</h4>
+        <h4 className="page_title"> welcome to  the Messages section</h4>
      </div>
     );
 }
