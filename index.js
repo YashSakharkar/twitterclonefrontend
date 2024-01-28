@@ -8,7 +8,7 @@ const express=require('express')
   app.use(cors());
   app.use(express.json());
   
-const uri = "mongodb+srv://yashsakharkar8:ozy6D3rXpFxGtVJt@cluster0.zlaghbv.mongodb.net/?retryWrites=true&w=majority";
+const uri = "mongodb+srv://yashsakharkar8:<password>@statebankofindia.qbbw19x.mongodb.net/?retryWrites=true&w=majority";
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
@@ -27,6 +27,7 @@ async function run() {
    
    const postCOllection= client.db("databse").collection("post");
    const userCollection=client.db("databse").collection("user");
+   const paymentCollection=client.db("databse").collection("payment");
     app.get('/post',async(req,res)=>{
         const post=(await postCOllection.find().toArray()).reverse();
         res.send(post);
@@ -58,6 +59,15 @@ async function run() {
     const result =await userCollection.updateOne(filter,updateDoc,options);
     res.send(result)
   })
+  app.get('/payment',async(req,res)=>{
+    const payment=(await paymentCollection.find().toArray()).reverse();
+    res.send(payment);
+})
+app.post('/payment',async(req,res)=>{
+  const payment=req.body;
+const result=await paymentCollection.insertOne(payment);
+res.send(result);
+})
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
  } catch(error){
        console.log(error)
